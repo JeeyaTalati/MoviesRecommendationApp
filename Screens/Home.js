@@ -9,7 +9,7 @@ export default class HomeScreen extends React.Component {
         }
     }
     componentDidMount() {
-        this.getMovie()
+        //this.getMovie()
     }
     timeConvert(num) {
         var hours = Math.floor(num / 60)
@@ -57,19 +57,26 @@ export default class HomeScreen extends React.Component {
                 <Text>
                     Welcome to Movies Recommendations App
                 </Text>
-                <TouchableOpacity onPress={this.likedMovie}>
+                <TouchableOpacity>
                     <Text>
                         LIKE
                     </Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={this.dislikedMovie}>
+                <TouchableOpacity >
                     <Text>
                         DISLIKE
                     </Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={this.notWatchedMovie}>
+                <TouchableOpacity>
                     <Text>
                         NOT WATCHED
+                    </Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress = {()=>{
+                    this.props.navigation.navigate('AppTopTab')
+                }}>
+                    <Text>
+                        Go to recommedation screens
                     </Text>
                 </TouchableOpacity>
             </View>
